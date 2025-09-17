@@ -1,19 +1,32 @@
-const openBtn = document.getElementById("openInvitationBtn");
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('openInvitationBtn');
+  const content = document.querySelector('.content');
+  const target = document.getElementById('openingoneandahalf');
 
-  openBtn.addEventListener("click", function (e) {
-    e.preventDefault(); 
+  if (!btn || !content || !target) return;
 
-    const elem = document.documentElement;
-    if (elem.requestFullscreen) {
-      elem.requestFullscreen();
-    } else if (elem.webkitRequestFullscreen) { 
-      elem.webkitRequestFullscreen();
-    } else if (elem.msRequestFullscreen) { 
-      elem.msRequestFullscreen();
+  btn.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    content.classList.add('show');
+
+    document.documentElement.style.overflow = 'auto';
+    document.body.style.overflow = 'auto';
+
+    const docEl = document.documentElement;
+    try {
+      if (docEl.requestFullscreen) {
+        await docEl.requestFullscreen();
+      } else if (docEl.webkitRequestFullscreen) {
+        docEl.webkitRequestFullscreen();
+      } else if (docEl.msRequestFullscreen) {
+        docEl.msRequestFullscreen();
+      }
+    } catch (err) {
     }
 
-    document.getElementById("openingoneandahalf").scrollIntoView({
-      behavior: "smooth",
-      block: "start"
-    });
+    setTimeout(() => {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 120);
   });
+});

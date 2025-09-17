@@ -1,9 +1,12 @@
+html,
 body {
     background-color: rgba(200, 230, 201, 0.8);
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    overflow: hidden;
 }
 
 div.container {
@@ -12,6 +15,17 @@ div.container {
     height: auto;
     min-height: 100dvh;
     background-color: black;
+}
+
+.content {
+    display: none;
+    opacity: 0;
+    transition: opacity 420ms ease;
+}
+
+.content.show {
+    display: block;
+    opacity: 1;
 }
 
 section.opening {
@@ -70,14 +84,18 @@ section.opening {
         background-color: #565F7D;
         color: #C8E6C9;
         font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        font-family: 'Playfair';
+        font-weight: bold;
     }
 
-    a {
+    /* a {
         text-decoration: none;
         color: inherit;
         font-family: 'Playfair';
         font-weight: bold;
-    }
+    } */
 }
 
 div.decoration {
