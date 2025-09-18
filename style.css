@@ -9,6 +9,52 @@ body {
     overflow: hidden;
 }
 
+/* music */
+
+#audioPlayer {
+    position: fixed;
+    bottom: 40px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    z-index: 50;
+}
+
+.btn-audio {
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    background-color: #565F7D;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    padding: 0;
+}
+
+.btn-audio:hover {
+    background-color: #454B63;
+    transform: scale(1.05);
+}
+
+#icon-play img,
+#icon-pause img {
+    width: 28px;
+    height: 28px;
+}
+
+#icon-pause {
+    display: none;
+}
+
+
+/* music */
+
 /* loader */
 .loader-wrapper {
     position: fixed;
@@ -40,9 +86,15 @@ body {
 }
 
 @keyframes loader {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
 /* loader */
 
 div.container {
