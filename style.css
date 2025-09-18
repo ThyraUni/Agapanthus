@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Harrington';
+    src: url('fonts/HARNGTON.woff2');
+    font-weight: 400;
+}
+
 html,
 body {
     background-color: rgba(200, 230, 201, 0.8);
