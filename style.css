@@ -118,7 +118,6 @@ div.container {
 
 section.opening {
     width: 100%;
-    min-height: 100vh;
     min-height: 100dvh;
     background-image: url('Image/satu.png');
     background-size: cover;
@@ -192,4 +191,187 @@ div.decoration {
     min-height: 100dvh;
     overflow: hidden;
     position: relative;
+}
+
+.openingoneandahalf {
+    width: 100%;
+    height: 576px;
+    background-image: url('Image/opening1.5.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .openingoneandahalfq {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 230, 201, 0.6);
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .image {
+        width: 52.3%;
+        height: 51.91%;
+        border: 4px solid #565F7D;
+        border-radius: 120px;
+        background-image: url('Image/79af8f7df96006989dd8727773dd85da_439869_ori.webp');
+        margin: 0 0 20px 0;
+    }
+
+    .teks {
+        * {
+            margin: 0;
+        }
+    }
+
+    h2 {
+        font-family: 'Playfair';
+        color: #565F7D;
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    h3 {
+        font-family: 'Playfair Display SC';
+        font-size: 20px;
+    }
+}
+
+.quotes {
+    width: 100%;
+    height: 576px;
+    background-image: url('Image/quotes.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .qoutesq {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 0 28px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    h4 {
+        font-family: 'Playfair Display';
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    h3 {
+        font-family: 'Playfair Display';
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 15px;
+    }
+}
+
+.brideandgroom {
+    width: 100%;
+    height: 1293px;
+    background-color: rgba(50, 104, 51, 0.7);
+    background-image: url('Image/brideandgroom.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .brideandgroomq {
+        width: 84.88%;
+        height: 91.42%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .isi {
+        width: 100%;
+        height: 587px;
+        background-color: rgba(200, 230, 201, 0.8);
+        padding: 55px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
+
+    h2 {
+        font-family: 'Harrington';
+        font-size: 50px;
+        font-weight: 400;
+        color: #565F7D;
+        margin: 0;
+    }
+
+
+    .image {
+        width: 47.4%;
+        height: 47.1%;
+        border: 4px solid #565F7D;
+        border-radius: 120px;
+        background-image: url('Image/79af8f7df96006989dd8727773dd85da_439869_ori.webp');
+        background-position-x: center;
+        margin: 0;
+        align-self: center;;
+    }
+
+    .teks {
+        * {
+            margin: 0;
+        }
+    }
+
+    h3 {
+        font-family: 'Playfair Display';
+        font-size: 24px;
+        font-weight: 900;
+        color: #565F7D;
+        margin-bottom: 8px;
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    button {
+        padding: 8px 30px;
+        border-radius: 20px;
+        border: none;
+        background-color: #565F7D;
+        color: #C8E6C9;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        font-family: 'Playfair';
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+        font-family: 'Playfair';
+        font-weight: bold;
+    }
 }
