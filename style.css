@@ -107,7 +107,7 @@ div.container {
     max-width: 430px;
     width: 100dvw;
     height: auto;
-    min-height: 100dvh;
+    min-height: 100vh;
     background-color: black;
 }
 
@@ -194,7 +194,6 @@ section.opening {
 div.decoration {
     width: 100%;
     min-height: 100vh;
-    min-height: 100dvh;
     overflow: hidden;
     position: relative;
 }
