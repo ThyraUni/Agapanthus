@@ -179,7 +179,7 @@ section.opening {
         font-size: 16px;
         cursor: pointer;
         outline: none;
-        font-family: 'Playfair';
+        font-family: 'Playfair Display';
         font-weight: bold;
     }
 
@@ -291,7 +291,6 @@ div.decoration {
 .brideandgroom {
     width: 100%;
     height: 1293px;
-    background-color: rgba(50, 104, 51, 0.7);
     background-image: url('Image/brideandgroom.png');
     background-size: cover;
     display: flex;
@@ -338,7 +337,8 @@ div.decoration {
         background-image: url('Image/79af8f7df96006989dd8727773dd85da_439869_ori.webp');
         background-position-x: center;
         margin: 0;
-        align-self: center;;
+        align-self: center;
+        ;
     }
 
     .teks {
@@ -352,13 +352,13 @@ div.decoration {
         font-size: 24px;
         font-weight: 900;
         color: #565F7D;
-        margin-bottom: 8px;
+        margin-bottom: 12px;
     }
 
     p {
         font-family: 'Poppins';
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14.4px;
     }
 
     button {
@@ -377,7 +377,269 @@ div.decoration {
     a {
         text-decoration: none;
         color: inherit;
-        font-family: 'Playfair';
         font-weight: bold;
+    }
+}
+
+.event {
+    width: 100%;
+    height: 726px;
+    background-image: url('Image/event.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 32px;
+    box-sizing: border-box;
+
+    .eventq {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 230, 201, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 55px 32px;
+        box-sizing: border-box;
+        border-radius: 300px;
+    }
+
+    .isi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+    }
+
+    img {
+        margin: 0 0 6px 0;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 32px;
+        font-family: 'Harrington';
+        color: #565F7D;
+    }
+
+    h3 {
+        font-family: 'Poppins';
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    h4 {
+        font-family: 'Poppins';
+        font-weight: 14.4px;
+        font-weight: 600;
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-weight: 14.4px;
+        font-weight: 400;
+    }
+
+    * {
+        margin: 0;
+    }
+
+    button {
+        padding: 8px 30px;
+        border-radius: 20px;
+        border: none;
+        background-color: #565F7D;
+        color: #C8E6C9;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        font-family: 'Playfair Display';
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.countdown {
+    width: 100%;
+    height: 726px;
+    background-image: url('Image/repeatbackground.png');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 32px;
+    box-sizing: border-box;
+
+    .countdownq {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 230, 201, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 55px 32px;
+        box-sizing: border-box;
+        border-radius: 300px;
+
+        * {
+            margin: 0;
+        }
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 32px;
+        font-family: 'Harrington';
+        color: #565F7D;
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-weight: 14.4px;
+        font-weight: 400;
+    }
+
+    button {
+        padding: 8px 30px;
+        border-radius: 20px;
+        border: none;
+        background-color: #565F7D;
+        color: #C8E6C9;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        font-family: 'Playfair Display';
+        font-weight: bold;
+    }
+}
+
+/* countdown */
+.countdownbox {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: #565F7D;
+    width: 59px;
+    height: 59px;
+    border-radius: 10px;
+    gap: -6px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    * {
+        margin: 0;
+    }
+
+    p {
+        font-family: 'Harrington';
+        color: #C8E6C9;
+        font-size: 24px;
+    }
+
+    span {
+        font-family: 'Harrington';
+        color: #C8E6C9;
+        font-size: 18px;
+    }
+}
+
+/* countdown */
+
+.maps {
+    width: 100%;
+    height: 726px;
+    background-image: url(Image/repeatbackground.png);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 32px;
+    box-sizing: border-box;
+
+    .mapsq {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 230, 201, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 55px 32px;
+        box-sizing: border-box;
+        border-radius: 300px;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 32px;
+        font-family: 'Harrington';
+        color: #565F7D;
+    }
+
+    h3 {
+        font-family: 'Playfair Display';
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-weight: 14.4px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    button {
+        padding: 8px 30px;
+        border-radius: 20px;
+        border: none;
+        background-color: #565F7D;
+        color: #C8E6C9;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        font-family: 'Playfair Display';
+        font-weight: bold;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+}
+
+.galeri {
+    width: 100%;
+    height: 900px;
+
+    div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
     }
 }
