@@ -77,3 +77,47 @@ const x = setInterval(function () {
     document.querySelector(".countdownbox").innerHTML = "<p>Waktu telah tiba!</p>";
   }
 }, 1000);
+
+const btnCashless = document.querySelector('.cashless');
+const btnKado = document.querySelector('.kado');
+
+const divCashless = document.querySelector('.cashless-div');
+const divKado = document.querySelector('.kirimkado');
+
+btnCashless.addEventListener('click', () => {
+  divCashless.classList.add('show');
+  divKado.classList.remove('show');
+});
+
+btnKado.addEventListener('click', () => {
+  divCashless.classList.remove('show');
+  divKado.classList.add('show');
+});
+
+const salinButtons = document.querySelectorAll('.salin');
+
+salinButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    let textToCopy = '';
+
+    if (button.closest('.cashless-div')) {
+      textToCopy = button.closest('.ket').querySelector('h3').innerText;
+    } else if (button.closest('.kirimkado')) {
+      textToCopy = button.closest('.kirimkado').querySelector('p').innerText;
+    }
+
+    navigator.clipboard.writeText(textToCopy)
+      .then(() => {
+        const originalText = button.innerText;
+        button.innerText = 'Tersalin!';
+        setTimeout(() => {
+          button.innerText = originalText;
+        }, 1500);
+      })
+      .catch(err => {
+        console.error('Gagal menyalin teks:', err);
+      });
+  });
+});
+
+

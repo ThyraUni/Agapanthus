@@ -1,11 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Contoh: Cashless / Kirim Kado</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            background: #f5f7fa;
+            padding: 24px;
+            color: #222;
+        }
+
+        .card {
+            width: 480px;
+            max-width: 100%;
+            margin: 0 auto;
+            background: linear-gradient(180deg, #e8f0ea, #dfeff0);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .title {
+            font-size: 22px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            margin-bottom: 18px;
+            text-align: center;
+            color: #333a;
+        }
+
+        .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        button.btn {
+            padding: 10px 20px;
+            border-radius: 28px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            background: #5f6b9a;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        button.btn.secondary {
+            background: #8b7fa2;
+        }
+
+        /* konten yang disembunyikan dengan animasi */
+        .content {
+            overflow: hidden;
+            transition: all .35s ease;
+            opacity: 0;
+            max-height: 0;
+            transform: translateY(-6px);
+            padding: 0 12px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            margin: 0 auto;
+        }
+
+        .content.show {
+            opacity: 1;
+            max-height: 400px;
+            /* cukup besar untuk menampilkan isi */
+            transform: translateY(0);
+            padding: 14px 16px;
+            margin-top: 12px;
+        }
+
+        .content h3 {
+            margin: 0 0 8px 0;
+            font-size: 16px;
+        }
+
+        .content p {
+            margin: 0;
+            line-height: 1.5;
+            color: #1f2b31;
+        }
+
+        /* style kecil untuk copy button */
+        .copy-btn {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 10px;
+            font-size: 13px;
+            border-radius: 6px;
+            background: #2f7a4a;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #3338;
+            margin-top: 8px;
+            text-align: center;
+        }
+    </style>
 </head>
+
 <body>
-    <audio src="music/Multo.mp3" preload="auto" autoplay style="width: 1000px;height: 1000px;"></audio>
+    <div class="card" role="region" aria-label="Area ucapan terima kasih">
+        <div class="title">Tanda Kasih</div>
+        <div class="subtitle">Terima kasih telah menambah semangat kebahagiaan pernikahan kami</div>
+
+        <div class="btn-row" role="tablist" aria-label="Pilihan hadiah">
+            <button id="btnCashless" class="btn" role="tab" aria-controls="contentCashless"
+                aria-selected="false">Cashless</button>
+            <button id="btnKirim" class="btn secondary" role="tab" aria-controls="contentKirim"
+                aria-selected="false">Kirim Kado</button>
+        </div>
+
+        <!-- DIV Code Bank BCA -->
+        <div id="contentCashless" class="content" aria-hidden="true">
+            <h3>Bank BCA (Contoh)</h3>
+            <p>
+                Kode Bank: <strong>014</strong><br>
+                Nomor Rekening: <strong>1234 5678 9012</strong><br>
+                Nama: <strong>Nama Penerima</strong>
+            </p>
+            <button class="copy-btn" data-target="123456789012">Salin Nomor</button>
+        </div>
+
+        <!-- DIV Alamat -->
+        <div id="contentKirim" class="content" aria-hidden="true">
+            <h3>Alamat Pengiriman Kado</h3>
+            <p>
+                Jl. Mawar No. 12<br>
+                Kel. Sukamaju, Kec. Contoh<br>
+                Kota Contoh — 12345<br>
+                (Keterangan tambahan: Antar ke paguyuban, jam 09.00-16.00)
+            </p>
+        </div>
+
+        <div class="hint">Klik salah satu tombol di atas untuk menampilkan informasi.</div>
+    </div>
+
+    <script>
+        // referensi elemen
+        const btnCashless = document.getElementById('btnCashless');
+        const btnKirim = document.getElementById('btnKirim');
+        const contentCashless = document.getElementById('contentCashless');
+        const contentKirim = document.getElementById('contentKirim');
+
+        function showContent(showEl, hideEl, showBtn, hideBtn) {
+            // sembunyikan yg lain
+            if (hideEl.classList.contains('show')) {
+                hideEl.classList.remove('show');
+                hideEl.setAttribute('aria-hidden', 'true');
+                hideBtn.setAttribute('aria-selected', 'false');
+            }
+            // toggling pada elemen yg diklik
+            const isVisible = showEl.classList.contains('show');
+            if (isVisible) {
+                showEl.classList.remove('show');
+                showEl.setAttribute('aria-hidden', 'true');
+                showBtn.setAttribute('aria-selected', 'false');
+            } else {
+                showEl.classList.add('show');
+                showEl.setAttribute('aria-hidden', 'false');
+                showBtn.setAttribute('aria-selected', 'true');
+                // fokus ke konten biar aksesibel
+                showEl.focus?.();
+            }
+        }
+
+        btnCashless.addEventListener('click', () => {
+            showContent(contentCashless, contentKirim, btnCashless, btnKirim);
+        });
+
+        btnKirim.addEventListener('click', () => {
+            showContent(contentKirim, contentCashless, btnKirim, btnCashless);
+        });
+
+        // fitur salin nomor (opsional)
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const value = btn.getAttribute('data-target') || '123456789012';
+                navigator.clipboard?.writeText(value).then(() => {
+                    btn.textContent = 'Tersalin ✓';
+                    setTimeout(() => btn.textContent = 'Salin Nomor', 1600);
+                }).catch(() => {
+                    alert('Salin gagal, coba manual: ' + value);
+                });
+            });
+        });
+    </script>
 </body>
+
 </html>
