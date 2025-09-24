@@ -647,8 +647,9 @@ div.decoration {
 .thanks {
     width: 100%;
     height: 726px;
-    background-image: url(Imagewebp/1_20250919_151538_0000.webp);
-    background-size: cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+        url('Imagewebp/1_20250919_151538_0000.webp') no-repeat center/cover;
+    background-blend-mode: darken;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -760,5 +761,75 @@ div.decoration {
 
     .show {
         display: flex;
+    }
+}
+
+.ending {
+    width: 100%;
+    height: 726px;
+    background-image: url(Imagewebp/ending.webp);
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 55px 32px;
+    box-sizing: border-box;
+
+    .endingq {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(200, 230, 201, 0.8);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 24px;
+        padding: 55px 32px;
+        box-sizing: border-box;
+        border-radius: 300px;
+    }
+
+    .isi {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        height: 100%;
+        width: 100%;
+    }
+
+    .image {
+        width: 49.6%;
+        height: 43.6%;
+        border: 4px solid #565F7D;
+        border-radius: 120px;
+        background-position-x: center;
+        background-size: cover;
+        margin: 0;
+        align-self: center
+    }
+
+    p {
+        font-family: 'Poppins';
+        font-weight: 14.4px;
+        font-weight: 400;
+        margin: 0;
+    }
+
+    h3 {
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0 0 -15px 0;
+    }
+
+    h2 {
+        margin: 0;
+        font-size: 32px;
+        font-family: 'Harrington';
+        color: #565F7D;
     }
 }
